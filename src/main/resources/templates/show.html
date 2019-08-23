@@ -13,6 +13,7 @@ Post Date: <span th:text="${message.postdate}"></span> <br />
 Sent BY: <span th:text="${message.sentby}"></span> <br />
 
 <a th:href="@{/delete/{id}(id=${message.id})}">Delete Message</a>
+<img th:src="${message.headshot}"/>
 <a href="/message">Write Message</a>
 </body>
 </html>
