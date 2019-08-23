@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http:www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        form{border:2px solid lightgreen;
+            background-color:lightblue;
+            margin-top: 50px;
+            margin-right: 40px;
+
+        }
+        h2{
+            color:lawngreen;
+            font-style: italic;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+<h2>Twitter</h2>
+<form action="#" th:action="@{/process}" th:object="${message}" method="post"
+    enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}">
-    Message: <textarea rows="4" th:field="*{content}"></textarea>
+    Message: <textarea rows="3" th:field="*{content}"></textarea>
     <span th:if="${#fields.hasErrors('content')}"
-          th:errors="*{content}"></span>
+          th:errors="*{content}"></span><br>
     Post Date: <input type="text" th:field="*{postdate}"/>
      <span th:if="${#fields.hasErrors('postdate')}"
-    th:errors="*{content}"></span>
+    th:errors="*{content}"></span><br>
     Sent By: <input type="text" th:field="*{sentby}">
     <span th:if="${#fields.hasErrors('sentby')}"
     th:errors="*{sentby}"></span>
-    <br/>
-    <input type="submit" value="Submit">
+    <h3>Upload your image</h3>
+    <input type="file" name="file"/> <br />
+    <input type="submit" value="Post">
 
 
 </form>
@@ -28,3 +43,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+

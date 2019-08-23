@@ -18,7 +18,9 @@
     <td th:text="${message.content}"></td>
         <td th:text="${message.postdate}"></td>
         <td th:text="${message.sentby}"></td>
-
+        <div th:if="${message.headshot} !=null">
+        <img th:src="${message.headshot}"/>
+        </div>
     <td>
     <a th:href="@{/update/{id}(id=${message.id})}">Update</a>-
         <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>-

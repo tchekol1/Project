@@ -19,6 +19,15 @@ public class Message {
     private String content;
     private String postdate;
     private String sentby;
+    private String headshot;
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
+    }
 
     public long getId() {
         return id;
